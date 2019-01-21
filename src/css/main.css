@@ -20,7 +20,7 @@ a:empty::before {
     }
 }
 
-body {
+.app {
     font-family: 'Roboto';
     font-size: 14px;
     color: var(--document-text);
@@ -30,7 +30,7 @@ body {
     min-height: 100vh;
 }
 @media print, screen and (max-width: 940px) {
-    body {
+    .app, body {
         max-width: 8.5in;
         width: 8.5in;
         max-height: 11in;
