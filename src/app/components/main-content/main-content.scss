@@ -1,0 +1,15 @@
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #444;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: #fafafa;
+}
+.view-online {
+    margin-top: auto;
+}

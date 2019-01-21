@@ -14,43 +14,41 @@ a[data-friendly]::before {
 a:empty::before {
     content: attr(href)
 }
-@media print {
-    a[data-friendly]::before {
-        content: attr(href) "";
-    }
-}
-
 .app {
     font-family: 'Roboto';
     font-size: 14px;
     color: var(--document-text);
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 216px 1fr;
     grid-template-rows: 1fr;
     min-height: 100vh;
 }
-@media print, screen and (max-width: 940px) {
-    .app, body {
+@media screen {
+    body {
+        background-color: #ededee;
+        padding:16px;
+        display: flex;
+        justify-content: center;
+    }
+    .app {
         max-width: 8.5in;
         width: 8.5in;
         max-height: 11in;
         height: 11in;
-        border: solid 1px black;
-        grid-template-columns: 1fr;
-        grid-template-rows: 96px 1fr;
+        z-index: 2;
+        box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07)
     }
 }
-main {
-    padding: 8px;
-    background-color: #f8f8f8;
-}
-
-.view-online {
-    margin-top: 80px;
-    display: none;
-}
-
 @media print {
+    a[data-friendly]::before {
+        content: attr(href) "";
+    }
+    .app {
+        max-width: 8.5in;
+        width: 8.5in;
+        max-height: 11in;
+        height: 11in;
+    }
     .view-online {
         display: block;
     }

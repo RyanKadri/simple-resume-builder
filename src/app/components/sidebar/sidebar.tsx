@@ -1,20 +1,39 @@
+import { faAddressBook, faCode, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { h } from "preact";
+import { PersonalData, SkillDefinition } from "../../types/types";
+import { FontAwesomeIcon } from "../common/fontawesome-icon";
 import './sidebar.scss';
+import { SkillSection } from "./skill-section";
 
-export const Sidebar = () => {
+export const Sidebar = ({ personal, skills }: SidebarProps) => {
+    const { address, phone, email, github } = personal;
+
     return <nav class="sidebar">
-        <div class="container">
+        <div class="personal-info">
             <header>
-                <h2 class="name">Ryan Kadri</h2>
-                <h4 class="profession">Software Engineer</h4>
+                <h2>
+                    Contact
+                </h2>
             </header>
-            <address class="physical">401 Conestoga Way
-                Apt V103
-                Eagleville, PA 19403
-            </address>
-            <address class="electronic"><a class="phone" href="tel:1908-294-3740">908-294-3740</a>
-                <a type="email" href="mailto:ryankadri1@gmail.com">ryankadri1@gmail.com</a>
-                <a class="github" href="https://github.com/RyanKadri" data-friendly="Github"></a></address>
+            <div class="info-grid">
+                <FontAwesomeIcon iconDef={ faAddressBook } />
+                <address class="physical">{ address.trim() }</address>
+                
+                <FontAwesomeIcon iconDef={ faPhone } />
+                <a class="phone" href={ `tel:${phone}` }>{phone}</a>
+
+                <FontAwesomeIcon iconDef={ faEnvelope } />
+                <a type="email" href={ `mailto:${ email }`}>{ email }</a>
+
+                <FontAwesomeIcon iconDef={ faCode } />
+                <a class="github" href={ github } data-friendly="Github"></a>
+            </div>
         </div>
+        <SkillSection skills={skills} />
       </nav>
+}
+
+export interface SidebarProps {
+    personal: PersonalData;
+    skills: SkillDefinition[];
 }

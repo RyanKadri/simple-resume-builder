@@ -1,0 +1,13 @@
+.skills {
+    margin-top: auto;
+    margin-bottom: 16px;
+    li {
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        .fa-icon {
+            margin-right: 16px;
+            height: 24px;
+        }
+    }
+}

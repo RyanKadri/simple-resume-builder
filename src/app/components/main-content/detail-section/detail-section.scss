@@ -1,0 +1,13 @@
+.detail-section {
+    margin-bottom: 16px;
+    max-width: 840px;
+
+    >header {
+        color: var(--primary);
+        font-size: 1.75em;
+        margin-bottom: 8px;
+    }
+    .detail-body {
+        padding-left: 16px;
+    }
+}

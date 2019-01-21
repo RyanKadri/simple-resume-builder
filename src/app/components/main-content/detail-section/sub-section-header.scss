@@ -1,0 +1,25 @@
+.subsection-header {
+    font-size: 1.25em;
+
+    .experience {
+        font-weight: 700;
+        font-style: normal;
+        color: var(--primary-dark);
+        margin-right: 12px;
+    }
+
+    .location {
+        font-size: 0.85em;
+        margin-right: 8px;
+    }
+    .position, .duration {
+        font-size: 0.85em;
+        color: var(--document-text-light);
+    }
+
+    .duration {
+        display: block;
+        margin-bottom: 8px;
+    }
+}
+
