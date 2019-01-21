@@ -4,4 +4,9 @@ import './css/main.css';
 import './css/print.css';
 import './css/variables.css';
 
-render(<App />, document.body)
+const resumePath = "/resume";
+
+if(location.pathname !== resumePath) {
+    location.replace(resumePath)
+}
+render(<App />, document.body);

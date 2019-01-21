@@ -22,7 +22,7 @@ and love how much there already is out there.`,
             { 
                 organization: 'SEI Investments',
                 location: 'Oaks PA',
-                position: "Test Automation Developer / Tech Lead",
+                position: "Automation Engineer / Tech Lead",
                 duration: "June 2015 - September 2018",
                 duties: [
                     "Created an in-house test orchestration framework",
