@@ -1,0 +1,14 @@
+:root {
+    --primary-dark: #00695f;
+    --primary: #009688;
+    --primary-light: #33ab9f;
+
+    --secondary-dark: #ab003c;
+    --secondary: #f50057;
+    --secondary-light: #f73378;
+
+    --primary-text: white;
+    --secondary-text: white;
+    --document-text: #111;
+    --document-text-light: rgba(0,0,0,0.65);
+}

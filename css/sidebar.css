@@ -1,0 +1,32 @@
+.sidebar {
+    padding: 0px 16px;
+    color: white;
+    background-color: var(--primary);
+    border: solid 8px var(--primary-dark);
+    border-left: none;
+    border-right: none;
+    box-shadow: 0 0 0 0.75pt #d1d1d1, 0 0 3pt 0.75pt #ccc;
+    z-index: 2;
+}
+.sidebar .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 240px;
+    height: 100%;
+    justify-content: center;
+}
+.sidebar address.physical {
+    white-space: pre-line;
+}
+.sidebar address.electronic {
+    white-space: pre-line;
+}
+.sidebar address a, .sidebar address p {
+    color: var(--primary-text);
+    display: inline-block;
+    white-space: pre-line;
+}
+.sidebar address .github {
+    margin-top: 8px;
+}

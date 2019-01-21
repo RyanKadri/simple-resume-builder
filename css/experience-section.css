@@ -1,0 +1,4 @@
+.job-summaries .details em {
+    font-style: normal;
+    color: var(--primary);
+}
