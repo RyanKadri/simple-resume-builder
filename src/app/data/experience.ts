@@ -8,9 +8,9 @@ export const experience: ExperienceData = {
             position: "Automation Engineer / Tech Lead",
             duration: "June 2015 - September 2018",
             duties: [
-                "Helped build automated test orchestration framework",
-                "Tech Lead as team grew from 3 to 28 developers",
-        ]
+                "Helped build an automated test orchestration framework",
+                "Acted as Tech Lead while team grew from 3 to 28 developers",
+            ]
         },
         {
             organization: 'NYI',
@@ -19,7 +19,7 @@ export const experience: ExperienceData = {
             duration: 'October 2013 - May 2015',
             duties: [
                 "Helped manage physical and virtual servers",
-                "Responded to service tickets on company helpdesk"
+                "Responded to service tickets on the company helpdesk"
             ]
         }
     ],
