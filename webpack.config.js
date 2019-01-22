@@ -37,10 +37,6 @@ const commonWeb = (name, entry) => merge(common(name, entry), {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
-            meta: {
-                charset: "UTF-8",
-                viewport: "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-            },
             hash: true
         })
     ],

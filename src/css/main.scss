@@ -8,12 +8,6 @@ ol, ul, li {
 h1, h2, h3, h4, h5 {
     font-weight: 500;
 }
-a[data-friendly]::before {
-    content: attr(data-friendly)
-}
-a:empty::before {
-    content: attr(href)
-}
 .app {
     font-family: 'Open Sans';
     font-size: 13px;
@@ -23,36 +17,53 @@ a:empty::before {
     grid-template-rows: 1fr;
     min-height: 100vh;
 }
-@media screen {
-    body {
-        background-color: #c3c3c3;
-        padding:16px;
-        display: flex;
-        justify-content: center;
-    }
-    .app {
-        max-width: 8.5in;
-        width: 8.5in;
-        max-height: 11in;
-        height: 11in;
-        z-index: 2;
-        box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07)
-    }
-}
-
 .view-online {
     display: none;
 }
 
-@media print {
-    a[data-friendly]::before {
-        content: attr(href) "";
+@media screen and (max-width: 900px) {
+    .app {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
     }
+    .sidebar {
+        order: 2;
+    }
+    .main-content {
+        order: 1;
+    }
+}
+
+@media screen and (min-width: 900px), print {
     .app {
         max-width: 8.5in;
         width: 8.5in;
         max-height: 11in;
         height: 11in;
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    body {
+        padding: 16px;
+    }
+}
+
+@media screen {
+    body {
+        background-color: #c3c3c3;
+        display: flex;
+        justify-content: center;
+    }
+    .app {
+        z-index: 2;
+        box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07);
+    }
+}
+
+@media print {
+    .app {
         overflow: hidden;
     }
     .view-online {
