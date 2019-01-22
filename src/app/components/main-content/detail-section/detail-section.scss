@@ -8,6 +8,9 @@
         margin-bottom: 8px;
     }
     .detail-body {
-        padding-left: 16px;
+        padding: 0 16px;
+    }
+    p.detail-body {
+        white-space: pre-line;
     }
 }

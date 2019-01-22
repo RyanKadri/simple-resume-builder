@@ -7,7 +7,7 @@ export function DetailSection(props: DetailSectionProps) {
     <header>{ header }</header>
     {
         body !== undefined
-            ? <p class="detail-body">{ body }</p>
+            ? <p class="detail-body">{ body.trim() }</p>
             : <section class="detail-body">{
                 children || []
             }</section>

@@ -1,5 +1,6 @@
 import { ResumeData } from "../../types/types";
 import { j } from "../common/j";
+import { SimpleLink } from "../common/simple-link";
 import { DetailSection } from "./detail-section/detail-section";
 import { EducationSection } from "./education/education-section";
 import { JobExperience } from "./job-experience/job-experience";
@@ -12,7 +13,7 @@ export const MainContent = ({ data }: MainContentProps) => {
             <h1 class="name">{ data.personal.name }</h1>
             <h2 class="profession">{ data.personal.profession }</h2>
         </header>
-        <DetailSection header="Interests" body={ data.interests } />
+        <DetailSection header="About Me" body={ data.interests } />
         <DetailSection header="Experience">
             <JobExperience experience={ data.experience } />
         </DetailSection>
@@ -23,7 +24,7 @@ export const MainContent = ({ data }: MainContentProps) => {
             <ProjectSection projects={data.projects} />
         </DetailSection>
         <aside class="view-online">
-            View this resume online at <a href="https://ryankadri.github.io"></a>
+            View this resume online at <SimpleLink href="https://ryankadri.github.io" />
         </aside>
     </main>
 }

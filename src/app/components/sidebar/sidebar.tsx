@@ -2,6 +2,7 @@ import { faAddressBook, faCode, faEnvelope, faPhone } from '@fortawesome/free-so
 import { PersonalData, SkillDefinition } from "../../types/types";
 import { FontAwesomeIcon } from "../common/fontawesome-icon";
 import { j } from "../common/j";
+import { SimpleLink } from "../common/simple-link";
 import './sidebar.scss';
 import { SkillSection } from "./skill-section";
 
@@ -20,13 +21,13 @@ export const Sidebar = ({ personal, skills }: SidebarProps) => {
                 <address class="physical">{ address.trim() }</address>
                 
                 <FontAwesomeIcon iconDef={ faPhone } />
-                <a class="phone" href={ `tel:${phone}` }>{phone}</a>
+                <SimpleLink class="phone" href={ phone } />
 
                 <FontAwesomeIcon iconDef={ faEnvelope } />
-                <a type="email" href={ `mailto:${ email }`}>{ email }</a>
+                <SimpleLink class="email" href={ email } />
 
                 <FontAwesomeIcon iconDef={ faCode } />
-                <a class="github" href={ github } data-friendly="Github"></a>
+                <SimpleLink class="github" href={ github } />
             </div>
         </div>
         <SkillSection skills={skills} />

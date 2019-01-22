@@ -1,5 +1,6 @@
 import { ProjectDefinition } from "../../../types/types";
 import { j } from "../../common/j";
+import { SimpleLink } from "../../common/simple-link";
 import { DetailSubSection } from "../detail-section/detail-sub-section";
 import { ExperienceHeader } from "../detail-section/sub-section-header";
 
@@ -13,7 +14,7 @@ const ProjectDefinition = ({ project }: ProjectDefProps) => (
     <DetailSubSection header={ <ExperienceHeader experience={ project.name } /> }>
         <div class="details">
             <p>{ project.summary }</p>
-            Link: { project.link ? <a href={project.link} data-friendly="Here"></a> : <span>N/A</span> }
+            Link: { project.link ? <SimpleLink href={project.link} /> : <span>N/A</span> }
         </div>
     </DetailSubSection>
 )
