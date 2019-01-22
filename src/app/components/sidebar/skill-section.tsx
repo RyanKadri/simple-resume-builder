@@ -14,8 +14,9 @@ export const SkillSection = ({ skills }: Props) => (
 )
 
 const SkillLine = ({ skill }: { skill: SkillDefinition }) => {
+    const unconfidencePercent = (100 - skill.confidence) / 100;
     return <li>
-            <FontAwesomeIcon iconDef={ faThumbsUp } style={ { transform: `rotate(-${(( 100 - skill.confidence) / 100) * 180}deg)`}} />
+            <FontAwesomeIcon iconDef={ faThumbsUp } style={ `transform: rotate(-${unconfidencePercent * 180}deg)`} />
             { skill.name }
         </li>
 }
