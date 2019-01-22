@@ -1,21 +1,23 @@
-export const j = (type: string | ((...args: any[]) => El), attributes: AttrMap | null, ...children: El[]) => {
-    if(typeof type === 'function') {
-        return type({ ...attributes, children: children || [] })
+import { ComponentConstructor, FunctionalComponent } from "preact";
+
+export const j = (nodeName: string | FunctionalComponent<any>, attributes: AttrMap | null, ...children: Element[]) => {
+    if(typeof nodeName === 'function') {
+        return nodeName({ ...attributes, children: children || [] })
     } else {
         return {
-            type,
+            nodeName,
             attributes: attributes || {},
             children 
         };
     }
 }
 
-export type El = string | VNode;
+export type Element = string | VNode;
 
 export interface VNode {
-    type: string;
+    nodeName: string | FunctionalComponent<any> | ComponentConstructor<any>;
     attributes: AttrMap;
-    children: El[];
+    children: Element[];
 }
 
 export type AttrMap = {

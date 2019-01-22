@@ -1,5 +1,4 @@
-import { ComponentChildren } from "preact";
-import { j } from "../../common/j";
+import { Element, j } from "../../common/j";
 import './detail-section.scss';
 
 export function DetailSection(props: DetailSectionProps) {
@@ -19,5 +18,5 @@ export function DetailSection(props: DetailSectionProps) {
 export interface DetailSectionProps {
     header: string;
     body?: string;
-    children?: ComponentChildren;
+    children?: Element | (Element | null)[];
 }

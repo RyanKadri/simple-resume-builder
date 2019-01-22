@@ -1,18 +1,18 @@
-import { ComponentChildren } from "preact";
-import { j } from "../../common/j";
+import { Element, j, VNode } from "../../common/j";
 import "./detail-sub-section.scss";
 
 export function DetailSubSection(props: DetailSubSectionProps) {
     const { children, header } = props;
     const wrapper = props.wrapper === undefined
-        ? (children: JSX.Element[], clss: string) => <section class={clss}>{children}</section>
+        ? (children: Element[], clss: string) => <section class={clss}>{children}</section>
         : props.wrapper
 
-    return wrapper([header, children as JSX.Element], "detail-sub-section");
+    const arrChildren = Array.isArray(children) ? children : [children];
+    return wrapper([header as Element, ...(arrChildren as Element[])], "detail-sub-section");
 }
 
 export interface DetailSubSectionProps {
-    children: ComponentChildren;
-    header: JSX.Element;
-    wrapper?: (children: JSX.Element[], clss: string) => JSX.Element
+    children: (Element | null)[] | Element | null;
+    header: Element | JSX.Element;
+    wrapper?: (children: Element[], clss: string) => VNode
 }

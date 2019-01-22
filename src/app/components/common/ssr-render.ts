@@ -1,11 +1,11 @@
-import { El, VNode } from "./j";
+import { Element, VNode } from "./j";
 
-export const renderInNode = (element: El | JSX.Element): string => {
+export const renderInNode = (element: Element | JSX.Element): string => {
     if(typeof element === "string") {
         return element;
     } else {
         const el = element as VNode;
-        const tag = el.type;
+        const tag = el.nodeName;
         const attributes = Object.entries(el.attributes)
             .map(([key, val]) => `${key}="${val}"`)
             .join(" ");
