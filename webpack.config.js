@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const nodeExternals = require("webpack-node-externals");
 const merge = require("webpack-merge");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const common = (name, entry) => ({
     name,
@@ -18,6 +19,9 @@ const common = (name, entry) => ({
     },
     plugins: [
         new CleanWebpackPlugin(["dist/"]),
+        new CopyWebpackPlugin([
+            { from: './assets/resume.png' }
+        ])
     ],
     module: {
         rules: [
@@ -63,6 +67,8 @@ module.exports = [
             historyApiFallback: true,
             hot: false,
             inline: true,
+            disableHostCheck: true,
+            host: '0.0.0.0'
         },
         mode: 'development'
     }),

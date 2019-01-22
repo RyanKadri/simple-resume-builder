@@ -12,9 +12,7 @@ export const Sidebar = ({ personal, skills }: SidebarProps) => {
     return <nav class="sidebar">
         <div class="personal-info">
             <header>
-                <h2>
-                    Contact
-                </h2>
+                <h2>Contact</h2>
             </header>
             <div class="info-grid">
                 <FontAwesomeIcon iconDef={ faAddressBook } />

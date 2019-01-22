@@ -9,7 +9,8 @@ export const education: EducationDetail[] = [
         gpa: "3.92",
         highlights: [
             "Received the Rutgers Presidential Scholarship",
-            "Honors Engineering"
+            "Double Major in Computer Science",
+            "Minors in Math and Physics"
         ]
      }
 ]
