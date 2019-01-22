@@ -1,13 +1,13 @@
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import { h } from "preact";
 import { SkillDefinition } from "../../types/types";
 import { FontAwesomeIcon } from "../common/fontawesome-icon";
+import { j } from "../common/j";
 import './skill-section.scss';
 
 export const SkillSection = ({ skills }: Props) => (
     <section class="skills">
         <header><h2>Skills</h2></header>
-        <ol >{
+        <ol>{
             skills.map(skill => <SkillLine skill={skill} /> )
         }</ol>
     </section>

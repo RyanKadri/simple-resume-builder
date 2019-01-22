@@ -1,5 +1,5 @@
-import { h } from "preact";
 import { MinorExperience } from "../../../types/types";
+import { j } from "../../common/j";
 import { DetailSubSection } from "../detail-section/detail-sub-section";
 import { ExperienceHeader } from "../detail-section/sub-section-header";
 

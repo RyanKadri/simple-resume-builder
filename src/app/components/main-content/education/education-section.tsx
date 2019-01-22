@@ -1,5 +1,5 @@
-import { h } from "preact";
 import { EducationDetail } from "../../../types/types";
+import { j } from "../../common/j";
 import { DetailSubSection } from "../detail-section/detail-sub-section";
 import { ExperienceHeader } from "../detail-section/sub-section-header";
 import './education-section.scss';
@@ -18,7 +18,7 @@ const EducationEntry = ({ experience }: { experience: EducationDetail}) => (
                     duration={experience.duration}
                     position={experience.field}
         />}
-        wrapper={ (children, clss) => <li className={clss}>{children}</li>}
+        wrapper={ (children, clss) => <li class={clss}>{children}</li>}
     >
         <ul class="highlights">{
             experience.highlights.map(highlight => (

@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { j } from "../../common/j";
 import "./sub-section-header.scss";
 
 export const ExperienceHeader = ({ experience, location, position, duration }: SubSectionHeaderProps) => (

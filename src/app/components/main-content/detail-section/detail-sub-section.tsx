@@ -1,10 +1,11 @@
-import { ComponentChildren, h } from "preact";
+import { ComponentChildren } from "preact";
+import { j } from "../../common/j";
 import "./detail-sub-section.scss";
 
-export const DetailSubSection = (props: DetailSubSectionProps) => {
+export function DetailSubSection(props: DetailSubSectionProps) {
     const { children, header } = props;
     const wrapper = props.wrapper === undefined
-        ? (children: JSX.Element[], clss: string) => <section className={clss}>{children}</section>
+        ? (children: JSX.Element[], clss: string) => <section class={clss}>{children}</section>
         : props.wrapper
 
     return wrapper([header, children as JSX.Element], "detail-sub-section");

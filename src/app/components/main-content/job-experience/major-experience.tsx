@@ -1,5 +1,5 @@
-import { h } from "preact";
 import { MajorExperience } from "../../../types/types";
+import { j } from "../../common/j";
 import { DetailSubSection } from "../detail-section/detail-sub-section";
 import { ExperienceHeader } from "../detail-section/sub-section-header";
 
@@ -10,7 +10,7 @@ export const MajorExperienceEntry = ({ experience }: MajorExperienceProps) => (
             location={experience.location}
             position={experience.position}
             duration={experience.duration} /> }
-        wrapper={ (contents, clss) => <li className={clss}>{ contents }</li>}
+        wrapper={ (contents, clss) => <li class={clss}>{ contents }</li>}
     >
         <ul class="details">{
             experience.duties.map(duty => (

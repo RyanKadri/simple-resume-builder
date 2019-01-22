@@ -1,7 +1,7 @@
 import { faAddressBook, faCode, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { h } from "preact";
 import { PersonalData, SkillDefinition } from "../../types/types";
 import { FontAwesomeIcon } from "../common/fontawesome-icon";
+import { j } from "../common/j";
 import './sidebar.scss';
 import { SkillSection } from "./skill-section";
 

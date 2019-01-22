@@ -1,7 +1,8 @@
-import { ComponentChildren, h } from "preact";
+import { ComponentChildren } from "preact";
+import { j } from "../../common/j";
 import './detail-section.scss';
 
-export const DetailSection = (props: DetailSectionProps) => {
+export function DetailSection(props: DetailSectionProps) {
     const { body, children, header } = props; 
     return <section class="detail-section">
     <header>{ header }</header>

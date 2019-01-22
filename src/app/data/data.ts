@@ -90,7 +90,7 @@ and love how much there already is out there.`,
             name: "This resume",
             summary: "Built with love",
             skills: ['ts', 'html', 'css', 'webpack'],
-            link: "https://github.com/RyanKadri/RyanKadri.github.io"
+            link: "https://github.com/RyanKadri/simple-resume-builder"
         }
     ],
     skills: [

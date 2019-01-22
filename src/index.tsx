@@ -1,12 +1,10 @@
-import { h, render } from 'preact';
 import { App } from "./app/app";
-import './css/main.css';
-import './css/print.css';
-import './css/variables.css';
+import { browserRender } from "./app/components/common/browser-render";
+import { j } from "./app/components/common/j";
 
 const resumePath = "/resume";
 
 if(location.pathname !== resumePath) {
-    location.replace(resumePath)
+    window.history.replaceState({}, "Ryan Kadri", resumePath);
 }
-render(<App />, document.body);
+browserRender(<App />, document.body);

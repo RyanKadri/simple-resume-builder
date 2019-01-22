@@ -1,5 +1,5 @@
-import { h } from "preact";
 import { ResumeData } from "../../types/types";
+import { j } from "../common/j";
 import { DetailSection } from "./detail-section/detail-section";
 import { EducationSection } from "./education/education-section";
 import { JobExperience } from "./job-experience/job-experience";

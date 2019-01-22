@@ -1,5 +1,5 @@
-import { h } from "preact";
 import { ExperienceData } from "../../../types/types";
+import { j } from "../../common/j";
 import './experience-section.scss';
 import { MajorExperienceEntry } from "./major-experience";
 import { MinorExperienceBlock } from "./minor-experiences";
