@@ -16,7 +16,7 @@ a:empty::before {
 }
 .app {
     font-family: 'Open Sans';
-    font-size: 14px;
+    font-size: 13px;
     color: var(--document-text);
     display: grid;
     grid-template-columns: 216px 1fr;
@@ -53,6 +53,7 @@ a:empty::before {
         width: 8.5in;
         max-height: 11in;
         height: 11in;
+        overflow: hidden;
     }
     .view-online {
         display: block;
