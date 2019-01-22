@@ -5,9 +5,10 @@
         margin-top: 8px;
         display: flex;
         align-items: center;
-        .fa-icon {
+        .confidence-chart {
             margin-right: 16px;
-            height: 24px;
+            height: 12px;
+            fill: white
         }
     }
 }
