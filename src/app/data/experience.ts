@@ -4,21 +4,22 @@ export const experience: ExperienceData = {
     major: [
         { 
             organization: 'SEI Investments',
-            location: 'Oaks PA',
-            position: "Automation Engineer / Tech Lead",
+            location: 'Oaks, PA',
+            position: "Automation Engineer / Platform Tech Lead",
             duration: "June 2015 - September 2018",
             duties: [
-                "Helped build an automated test orchestration framework",
-                "Acted as Tech Lead while team grew from 3 to 28 developers",
+                "Led design and development for an automated test orchestration framework",
+                "Acted as Tech Lead while automation team grew from 3 to 28 developers",
+                "Trained technical and non-technical team members onshore and offshore in automated testing",
             ]
         },
         {
             organization: 'NYI',
-            location: 'Bridgewater NJ',
+            location: 'Bridgewater, NJ',
             position: 'Data Center Technician',
             duration: 'October 2013 - May 2015',
             duties: [
-                "Helped manage physical and virtual servers",
+                "Managed physical and virtual servers",
                 "Responded to service tickets on the company helpdesk"
             ]
         }
@@ -31,10 +32,6 @@ export const experience: ExperienceData = {
         {
             position: "Archery Instructor",
             summary: "Taught archery at a Boy Scouts camp"
-        },
-        {
-            position: "Warehouse Assistant",
-            summary: "Helped process orders and quality-test products"
         }
     ]
 }

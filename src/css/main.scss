@@ -13,18 +13,48 @@ h1, h2, h3, h4, h5 {
     font-size: 13px;
     color: var(--document-text);
     display: grid;
-    grid-template-columns: 216px 1fr;
-    grid-template-rows: 1fr;
+    grid-template-areas: "personal-info main"
+                         "skills main";
+    grid-template-columns: 214px 1fr;
     min-height: 100vh;
 }
 .view-online {
     display: none;
 }
+.skills {
+    grid-area: skills;
+}
+.personal-info {
+    grid-area: personal-info;
+}
+.main-content {
+    grid-area: main;
+}
+
+.skills, .personal-info {
+    background-color: var(--primary);
+    border-left: none;
+    border-right: none;
+    padding: 16px;
+    z-index: 2;
+    color: white;
+
+    a, p {
+        color: var(--primary-text);
+        display: inline-block;
+        white-space: pre-line;
+        text-decoration: none;
+    }
+}
 
 @media screen and (max-width: 900px) {
     .app {
+        grid-template-areas: 
+                             "skills"
+                             "main"
+                             "personal-info"
+                             ;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
     }
     .sidebar {
         order: 2;

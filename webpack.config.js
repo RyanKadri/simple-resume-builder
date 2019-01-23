@@ -51,7 +51,8 @@ const commonWeb = (name, entry) => merge(common(name, entry), {
                 use: [
                     { loader: 'style-loader' },
                     { loader: 'css-loader' },
-                    { loader: 'sass-loader' }
+                    { loader: 'postcss-loader' },
+                    { loader: 'sass-loader' },
                 ]
             }
         ]

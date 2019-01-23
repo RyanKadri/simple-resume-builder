@@ -2,5 +2,9 @@
     .details {
         margin-bottom: 8px;
         padding-left: 16px;
+        li::before {
+            content: '-';
+            margin-right: 4px;
+        }
     }
 } 

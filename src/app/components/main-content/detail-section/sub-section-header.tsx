@@ -1,10 +1,9 @@
 import { j } from "../../common/j";
 import "./sub-section-header.scss";
 
-export const ExperienceHeader = ({ experience, location, position, duration }: SubSectionHeaderProps) => (
+export const ExperienceHeader = ({ experience, position, duration }: SubSectionHeaderProps) => (
     <header class="subsection-header">
         <em class="experience">{ experience }</em>
-        { location !== undefined ? <span class="location">{ location }</span> : null }
         { position !== undefined ? <i class="position">{ position }</i> : null }
         { duration !== undefined ? <time class="duration">{ duration }</time> : null }
     </header>

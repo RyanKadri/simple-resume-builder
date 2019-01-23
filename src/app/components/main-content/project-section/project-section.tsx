@@ -14,7 +14,7 @@ const ProjectDefinition = ({ project }: ProjectDefProps) => (
     <DetailSubSection header={ <ExperienceHeader experience={ project.name } /> }>
         <div class="details">
             <p>{ project.summary }</p>
-            Link: { project.link ? <SimpleLink href={project.link} /> : <span>N/A</span> }
+            { project.link ? <p>Link: <SimpleLink href={project.link} /></p> : null }
         </div>
     </DetailSubSection>
 )

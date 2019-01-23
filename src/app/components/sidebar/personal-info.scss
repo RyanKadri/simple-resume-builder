@@ -1,0 +1,31 @@
+.personal-info {
+    border-top: solid 8px var(--primary-dark);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        align-items: center;
+        grid-gap: 16px;
+        grid-row-gap: 16px;
+        margin-top: 24px;
+        overflow: auto;
+
+        .fa-icon {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+
+    address {
+        display: inline-block;
+        font-style: normal;
+        p {
+            display: inline-block;
+        }
+    }
+
+}

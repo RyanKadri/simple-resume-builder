@@ -1,6 +1,9 @@
 .skills {
-    margin-top: auto;
-    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-bottom: solid 8px var(--primary-dark);
+
     li {
         margin-top: 8px;
         display: flex;
@@ -12,8 +15,11 @@
         }
     }
 }
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
     .skills {
-        margin-top: 16px;
+        ol{
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
     }
 }
