@@ -6,7 +6,7 @@ import { renderInNode } from "./app/components/common/ssr-render";
 
 declare const styleEl: any;
 
-const index = fs.readFileSync('./src/index.html', { encoding: 'utf8' });
+const index = fs.readFileSync('./dist/index.html', { encoding: 'utf8' });
 const serializedApp = index
     .replace("<!-- STATIC_CONTENT -->", renderInNode(<App />))
     .replace("<!-- STYLES -->", `<style type="text/css">${styleEl.contents}</style>`)
