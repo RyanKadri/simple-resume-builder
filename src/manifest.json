@@ -1,0 +1,13 @@
+{
+    "name": "Ryan Kadri - Resume",
+    "short_name": "Resume",
+    "description": "A simple web-based resume",
+    "start_url": "/resume",
+    "background_color": "#000000",
+    "theme_color": "#00695f",
+    "icons": [{
+      "src": "resume.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }]
+  }

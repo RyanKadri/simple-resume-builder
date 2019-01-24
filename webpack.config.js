@@ -20,8 +20,13 @@ const common = (name, entry) => ({
     plugins: [
         new CleanWebpackPlugin(["dist/"]),
         new CopyWebpackPlugin([
-            { from: './assets/resume.png' }
-        ])
+            { from: './assets/resume.png' },
+            { from: './src/manifest.json' }
+        ]),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            hash: true
+        })
     ],
     module: {
         rules: [
@@ -38,12 +43,6 @@ const common = (name, entry) => ({
 })
 
 const commonWeb = (name, entry) => merge(common(name, entry), {
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-            hash: true
-        })
-    ],
     module: {
         rules: [
             {
