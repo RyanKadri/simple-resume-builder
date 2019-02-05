@@ -11,8 +11,8 @@
     "build:web:confidential": "npm run build:static:confidential && webpack --config-name resume-web-prod",
     "build:static": "webpack --config-name resume-ssr && npm run ssr:public",
     "build:static:confidential": "webpack --config-name resume-ssr && ssr:confidential",
-    "ssr:confidential": "CONFIDENTIAL_MODE=true node ./dist/resume-ssr.bundle.js",
-    "ssr:public": "node ./dist/resume-ssr.bundle.js"
+    "ssr:confidential": "CONFIDENTIAL_MODE=true node ./dist/main.bundle.js",
+    "ssr:public": "node ./dist/main.bundle.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.6.3",
