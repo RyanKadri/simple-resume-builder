@@ -18,15 +18,10 @@ const common = (name, entry) => ({
         publicPath: "/",
     },
     plugins: [
-        new CleanWebpackPlugin(["dist/"]),
         new CopyWebpackPlugin([
             { from: './assets/resume.png' },
             { from: './src/manifest.json' }
-        ]),
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-            hash: true
-        })
+        ])
     ],
     module: {
         rules: [
@@ -42,7 +37,7 @@ const common = (name, entry) => ({
     },
 })
 
-const commonWeb = (name, entry) => merge(common(name, entry), {
+const commonWeb = (name, entry, indexHtml) => merge(common(name, entry, indexHtml), {
     module: {
         rules: [
             {
@@ -55,7 +50,13 @@ const commonWeb = (name, entry) => merge(common(name, entry), {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./dist/index-ssr.html",
+            hash: true
+        })
+    ]
 })
 
 module.exports = [
@@ -81,6 +82,9 @@ module.exports = [
     merge(common('resume-ssr', './src/index.ssr.tsx'), {
         target: 'node',
         externals: [nodeExternals()],
+        plugins: [
+            new CleanWebpackPlugin('./dist')
+        ],
         module: {
             rules: [
                 {
