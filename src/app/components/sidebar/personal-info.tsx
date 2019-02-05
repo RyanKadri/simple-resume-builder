@@ -13,15 +13,17 @@ export const PersonalInfo = ({ info }: Props) => {
             <h2>Contact</h2>
         </header>
         <div class="info-grid">
-            <FontAwesomeIcon iconDef={ faAddressBook } />
-            <address class="physical">
-                <p>{streetAddress}</p>
-                <p>{addressLineTwo}</p>
-                <p>{cityStateZip}</p>
-            </address>
+            { streetAddress === undefined ? null : <FontAwesomeIcon iconDef={ faAddressBook } /> }
+            { streetAddress === undefined ? null : ( 
+                <address class="physical">
+                    <p>{streetAddress}</p>
+                    <p>{addressLineTwo}</p>
+                    <p>{cityStateZip}</p>
+                </address>
+            )}
             
-            <FontAwesomeIcon iconDef={ faPhone } />
-            <SimpleLink class="phone" href={ phone } />
+            { phone === undefined ? null : <FontAwesomeIcon iconDef={ faPhone } /> }
+            { phone === undefined ? null : <SimpleLink class="phone" href={ phone } /> }
 
             <FontAwesomeIcon iconDef={ faEnvelope } />
             <SimpleLink class="email" href={ email } />

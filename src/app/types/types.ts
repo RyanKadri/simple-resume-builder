@@ -10,10 +10,10 @@ export interface ResumeData {
 export interface PersonalData {
     name: string;
     profession: string;
-    streetAddress: string;
-    addressLineTwo: string;
-    cityStateZip: string;
-    phone: string;
+    streetAddress?: string;
+    addressLineTwo?: string;
+    cityStateZip?: string;
+    phone?: string;
     email: string;
     github: string;
 }

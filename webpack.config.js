@@ -6,10 +6,9 @@ const nodeExternals = require("webpack-node-externals");
 const merge = require("webpack-merge");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const common = (name, entry) => ({
-    name,
+const common = (entry) => ({
     entry : {
-        [name]: entry 
+        main: entry, 
     },
     devtool: 'source-map',
     output: {
@@ -18,9 +17,13 @@ const common = (name, entry) => ({
         publicPath: "/",
     },
     plugins: [
-        new CleanWebpackPlugin(["dist/"]),
         new CopyWebpackPlugin([
-            { from: './assets/resume.png' }
+            { from: './assets/resume.png' },
+            { from: './assets/resume-256.png' },
+            { from: './assets/resume-512.png' },
+            { from: './src/manifest.json' },
+            { from: './src/404.html' },
+            { from: './src/robots.txt' },
         ])
     ],
     module: {
@@ -37,13 +40,10 @@ const common = (name, entry) => ({
     },
 })
 
-const commonWeb = (name, entry) => merge(common(name, entry), {
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-            hash: true
-        })
-    ],
+const commonWeb = merge(common("./src/index.tsx"), {
+    entry: {
+        'service-worker': "./src/app/service-worker.js"
+    },
     module: {
         rules: [
             {
@@ -56,11 +56,18 @@ const commonWeb = (name, entry) => merge(common(name, entry), {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./dist/index-ssr.html",
+            hash: true
+        })
+    ]
 })
 
 module.exports = [
-    merge(commonWeb('resume-web', './src/index.tsx'), { 
+    merge(commonWeb, { 
+        name: 'resume-web',
         devServer: {
             contentBase: path.join(__dirname, 'src'),
             port: 3000,
@@ -73,15 +80,20 @@ module.exports = [
         },
         mode: 'development'
     }),
-    merge(commonWeb('resume-web-prod', './src/index.tsx'), {
+    merge(commonWeb, {
+        name: 'resume-web-prod',
         plugins: [
             new BundleAnalyzerPlugin(),
         ],
         mode: 'production'
     }),
-    merge(common('resume-ssr', './src/index.ssr.tsx'), {
+    merge(common('./src/index.ssr.tsx'), {
+        name: 'resume-ssr', 
         target: 'node',
         externals: [nodeExternals()],
+        plugins: [
+            new CleanWebpackPlugin('./dist')
+        ],
         module: {
             rules: [
                 {

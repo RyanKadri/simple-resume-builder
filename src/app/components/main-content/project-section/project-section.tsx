@@ -11,7 +11,10 @@ export const ProjectSection = ({ projects }: Props) => (
 )
 
 const ProjectDefinition = ({ project }: ProjectDefProps) => (
-    <DetailSubSection header={ <ExperienceHeader experience={ project.name } /> }>
+    <DetailSubSection 
+        header={ <ExperienceHeader experience={ project.name } /> }
+        wrapper={(contents, clss) => <li class={clss}>{contents}</li>}    
+    >
         <div class="details">
             <p>{ project.summary }</p>
             { project.link ? <p>Link: <SimpleLink href={project.link} /></p> : null }

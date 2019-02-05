@@ -1,6 +1,7 @@
 import { Element, VNode } from "./j";
 
 export const browserRender = (el: Element | JSX.Element, parent: HTMLElement) => {
+    parent.innerHTML = "";
     parent.appendChild(_browserRender(el));
 }
 
