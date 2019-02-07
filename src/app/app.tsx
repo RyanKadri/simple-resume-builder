@@ -8,7 +8,7 @@ import { SkillSection } from "./components/sidebar/skill-section";
 import { resumeData } from "./data/data";
 
 export const App = () => {
-    return <div class="app">
+    return <div class="app" {...{ itemscope: true, itemType: "http://schema.org/Person" }}>
         <PersonalInfo info={resumeData.personal} />
         <SkillSection skills={resumeData.skills} />
         <MainContent data={ resumeData } />

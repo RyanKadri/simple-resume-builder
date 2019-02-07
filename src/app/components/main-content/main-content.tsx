@@ -10,10 +10,10 @@ import { ProjectSection } from "./project-section/project-section";
 export const MainContent = ({ data }: MainContentProps) => { 
     return <main class="main-content">
         <header class="main-header">
-            <h1 class="name">{ data.personal.name }</h1>
-            <h2 class="profession">{ data.personal.profession }</h2>
+            <h1 class="name" { ...{itemprop: "name"}}>{ data.personal.name }</h1>
+            <h2 class="profession" { ...{itemprop: "jobTitle"}}>{ data.personal.profession }</h2>
         </header>
-        <DetailSection header="About Me" body={ data.interests } />
+        <DetailSection header="About Me" body={ data.interests } bodyAttrs={ { itemprop: "description" } } />
         <DetailSection header="Experience">
             <JobExperience experience={ data.experience } />
         </DetailSection>

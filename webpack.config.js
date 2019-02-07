@@ -23,7 +23,9 @@ const common = (entry) => ({
             { from: './assets/resume-512.png' },
             { from: './src/manifest.json' },
             { from: './src/404.html' },
-            { from: './src/robots.txt' },
+            { from: './site-meta/robots.txt' },
+            { from: './site-meta/sitemap.txt' },
+            { from: './site-meta/README.md' }
         ])
     ],
     module: {
