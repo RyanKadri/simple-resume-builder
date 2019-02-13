@@ -1,12 +1,6 @@
 import { ProjectDefinition } from "../types/types";
 
 export const projects: ProjectDefinition[] = [
-    { 
-        name: "XSRT",
-        summary: "An open-source session-recording tool for web applications",
-        skills: ['ts', 'html', 'css', 'dock', 'mongo', 'react', 'webpack'],
-        link: 'https://github.com/ryankadri/xsrt',
-    },
     {
         name: "SEI Test Automation Orchestrator",
         summary: "A test runner and workflow management tool for end-to-end automated tests at SEI." +

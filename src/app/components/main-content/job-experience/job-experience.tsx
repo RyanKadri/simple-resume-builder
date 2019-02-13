@@ -6,8 +6,12 @@ import { MinorExperienceBlock } from "./minor-experiences";
 
 export const JobExperience = ({ experience }: JobExperienceProps ) => (
     <ol class="past-jobs">
-        {experience.major.map(entry => <MajorExperienceEntry experience={entry} />)}
-        <MinorExperienceBlock experiences={experience.minor} />
+        { experience.major.map(entry => 
+            <MajorExperienceEntry experience={entry} />
+        )}
+        { experience.minor && experience.minor.length > 0
+            ? <MinorExperienceBlock experiences={experience.minor} />
+            : null }
     </ol>
 )
 
