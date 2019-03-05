@@ -8,10 +8,10 @@
   "scripts": {
     "start:web": "npm run build:static && webpack-dev-server --config-name resume-web",
     "build:web": "npm run build:static && webpack --config-name resume-web-prod",
-    "build:web:confidential": "npm run build:static:confidential && webpack --config-name resume-web-prod",
+    "build:web:confidential": "npm run build:static:confidential && CONFIDENTIAL_MODE=true webpack --config-name resume-web-prod",
     "build:static": "webpack --config-name resume-ssr && npm run ssr:public",
-    "build:static:confidential": "webpack --config-name resume-ssr && ssr:confidential",
-    "ssr:confidential": "CONFIDENTIAL_MODE=true node ./dist/main.bundle.js",
+    "build:static:confidential": "CONFIDENTIAL_MODE=true webpack --config-name resume-ssr && npm run ssr:confidential",
+    "ssr:confidential": "node ./dist/main.bundle.js",
     "ssr:public": "node ./dist/main.bundle.js"
   },
   "dependencies": {

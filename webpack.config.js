@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require("webpack");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -26,7 +27,8 @@ const common = (entry) => ({
             { from: './site-meta/robots.txt' },
             { from: './site-meta/sitemap.txt' },
             { from: './site-meta/README.md' }
-        ])
+        ]),
+        new webpack.EnvironmentPlugin({"CONFIDENTIAL_MODE": false})
     ],
     module: {
         rules: [

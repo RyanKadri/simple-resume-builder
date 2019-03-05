@@ -8,6 +8,7 @@ cp 404.html index.html
 
 git status
 read -p "Take a quick look and press enter to continue"
+read -p "Stop. Is there any personal info you dont want to share?"
 git add *
 git commit -a -m "$1"
 git push github master

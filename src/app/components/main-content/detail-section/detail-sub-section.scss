@@ -1,10 +1,15 @@
 .detail-sub-section {
     .details {
-        margin-bottom: 8px;
-        padding-left: 16px;
+        margin-bottom: 12px;
+        padding-left: 12px;
         li::before {
-            content: '-';
-            margin-right: 4px;
+            content: ' ';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border: solid 1px #ccc;
+            margin-right: 8px;
+            margin-bottom: 1px;
         }
     }
 } 

@@ -1,4 +1,4 @@
-const version = 'v0.0.2';
+const version = 'v0.0.4';
 const worker = self;
 
 worker.addEventListener('install', (e) => {
@@ -7,7 +7,7 @@ worker.addEventListener('install', (e) => {
         caches.open(`${version}-resume`)
             .then(cache => {
                 cache.addAll([
-                    '/resume.html',
+                    '/',
                     '/main.bundle.js',
                     '/resume.png'
                 ])
