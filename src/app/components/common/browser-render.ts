@@ -1,4 +1,5 @@
 import { Element, VNode } from "./j";
+import { flatten } from "./utils";
 
 export const browserRender = (el: Element | JSX.Element, parent: HTMLElement) => {
     parent.innerHTML = "";
@@ -21,16 +22,4 @@ const _browserRender = (element: Element | JSX.Element) => {
         }
     })
     return node;
-}
-
-function flatten<T>(arr: (T | T[])[]) {
-    const res: T[] = [];
-    for(const el of arr) {
-        if(Array.isArray(el)) {
-            res.push(...flatten(el))
-        } else {
-            res.push(el)
-        }
-    }
-    return res;
 }

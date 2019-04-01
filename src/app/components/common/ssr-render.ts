@@ -1,4 +1,5 @@
 import { Element, VNode } from "./j";
+import { flatten } from "./utils";
 
 export const renderInNode = (element: Element | JSX.Element): string => {
     if(typeof element === "string") {
@@ -10,7 +11,7 @@ export const renderInNode = (element: Element | JSX.Element): string => {
             .map(([key, val]) => `${key}="${val}"`)
             .join(" ");
 
-        const children = el.children.flat(Infinity);
+        const children = flatten(el.children);
         
         return `<${tag} ${attributes}>${children.map(child => 
             !!child ? renderInNode(child) : "").join(" ")}</${tag}>`;
