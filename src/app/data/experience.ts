@@ -32,7 +32,7 @@ export const experience: ExperienceData = {
             duties: [
                 "Managed physical and virtual servers based on helpdesk requests",
                 "Created Apache and Nginx configurations to help clients meet web-hosting needs",
-                "Updated firewall and monitoring tools to accomodate client networking needs"
+                "Updated firewall and monitoring tools to accommodate client networking needs"
             ]
         }
     ],

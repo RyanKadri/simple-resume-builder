@@ -7,18 +7,16 @@ import './personal-info.scss';
 
 
 export const PersonalInfo = ({ info }: Props) => {
-    const { streetAddress, addressLineTwo, cityStateZip, phone, email, github } = info;
+    const { cityState, phone, email, github } = info;
     return <div class="personal-info">
         <header>
             <h2>Contact</h2>
         </header>
         <div class="info-grid">
-            { streetAddress === undefined ? null : <FontAwesomeIcon iconDef={ faAddressBook } /> }
-            { streetAddress === undefined ? null : ( 
+            { cityState === undefined ? null : <FontAwesomeIcon iconDef={ faAddressBook } /> }
+            { cityState === undefined ? null : ( 
                 <address class="physical">
-                    <p>{streetAddress}</p>
-                    <p>{addressLineTwo}</p>
-                    <p>{cityStateZip}</p>
+                    <p>{cityState}</p>
                 </address>
             )}
             
