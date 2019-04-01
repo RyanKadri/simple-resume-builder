@@ -87,7 +87,9 @@ module.exports = [
     merge(commonWeb, {
         name: 'resume-web-prod',
         plugins: [
-            new BundleAnalyzerPlugin(),
+            new BundleAnalyzerPlugin({
+                analyzerMode: process.env.REMOTE_BUILD ? "disabled" : "static"
+            }),
         ],
         mode: 'production'
     }),

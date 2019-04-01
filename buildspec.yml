@@ -8,7 +8,7 @@ phases:
         - echo Build started on `date`
         - mkdir -p ./src/app/data/personal
         - touch ./src/app/data/personal/confidential.ts
-        - npm run build:web
+        - npm run build:web:remote
 artifacts:
   files:
       - '**/*'
