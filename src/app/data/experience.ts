@@ -3,10 +3,20 @@ import { ExperienceData } from "../types/types";
 export const experience: ExperienceData = {
     major: [
         {
+            organization: "Capital One",
+            location: "Wilmington, DE",
+            position: "Full Stack Developer",
+            duration: "April 2019 - Present",
+            duties: [
+                "Implemented a frontend redesign for a Knowledge Management app",
+                "Refactored the codebase to improve static analysis in Typescript"
+            ]
+        },
+        {
             organization: "XSRT (Open Source)",
             location: "Eagleville, PA",
             position: "Project Maintainer",
-            duration: "September 2018 - Present",
+            duration: "September 2018 - April 2019",
             duties: [
                 "Designed and built a session recording tool for web applications",
                 "Worked with React, Typescript, and Webpack to build a fast, modern frontend",
@@ -23,19 +33,10 @@ export const experience: ExperienceData = {
                 "Used Angular, Tomcat, and MySQL to develop tools for improving testing efficiency",
                 "Acted as a Tech Lead while the Test Automation team grew from 3 to 28 developers",
             ]
-        },
-        {
-            organization: 'NYI',
-            location: 'Bridgewater, NJ',
-            position: 'Data Center Technician',
-            duration: 'October 2013 - May 2015',
-            duties: [
-                "Managed physical and virtual servers based on helpdesk requests",
-                "Created Apache and Nginx configurations to help clients meet web-hosting needs",
-                "Updated firewall and monitoring tools to accommodate client networking needs"
-            ]
         }
     ],
-    minor: [
-    ]
+    minor: [{
+        position: "NYI - Data Center Technician",
+        summary: "Managed physical and virtual servers based on helpdesk requests"
+    }]
 }
