@@ -9,7 +9,7 @@ export const experience: ExperienceData = {
             duration: "April 2019 - Present",
             duties: [
                 "Implemented a frontend redesign for a Knowledge Management app",
-                "Refactored the codebase to improve static analysis in Typescript"
+                "Refactored the frontend React codebase to improve static analysis in Typescript"
             ]
         },
         {
@@ -35,8 +35,5 @@ export const experience: ExperienceData = {
             ]
         }
     ],
-    minor: [{
-        position: "NYI - Data Center Technician",
-        summary: "Managed physical and virtual servers based on helpdesk requests"
-    }]
+    minor: []
 }
