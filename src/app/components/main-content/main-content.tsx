@@ -24,7 +24,7 @@ export const MainContent = ({ data }: MainContentProps) => {
             <ProjectSection projects={data.projects} />
         </DetailSection>
         <aside class="view-online">
-            View this resume online at <SimpleLink href="https://ryankadri.github.io" />
+            View this resume online at <SimpleLink href="https://resume.rk0.xyz" />
         </aside>
     </main>
 }

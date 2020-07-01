@@ -9,7 +9,7 @@ export const experience: ExperienceData = {
             duration: "April 2019 - Present",
             duties: [
                 "Implemented a frontend redesign for a Knowledge Management app",
-                "Refactored the frontend React codebase to improve static analysis in Typescript"
+                "Migrated backend services from Clojure to TypeScript and onto a CICD platform"
             ]
         },
         {
