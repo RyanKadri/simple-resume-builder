@@ -1,4 +1,7 @@
-import { faAddressBook, faCode, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faAddressBook } from "@fortawesome/free-solid-svg-icons/faAddressBook";
+import { faCode } from "@fortawesome/free-solid-svg-icons/faCode";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
 import { PersonalData } from "../../types/types";
 import { FontAwesomeIcon } from "../common/fontawesome-icon";
 import { j } from "../common/j";

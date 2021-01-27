@@ -1,15 +1,20 @@
 window = {};
+
+// These make the style-loader work in SSR!
 styleEl = (function () {
   let contents = ""
   return {
     get contents() { return contents },
     appendChild,
     setAttribute,
+    removeAttribute,
     childNodes: [],
   }
   
   function setAttribute(attr, val) {
-    console.log(`${attr}="${val}"`)
+  }
+
+  function removeAttribute(attr) {
   }
 
   function appendChild(txt) {

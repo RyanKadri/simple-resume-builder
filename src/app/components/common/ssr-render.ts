@@ -14,6 +14,9 @@ export const renderInNode = (element: Element | JSX.Element): string => {
         const children = flatten(el.children);
         
         return `<${tag} ${attributes}>${children.map(child => 
-            !!child ? renderInNode(child) : "").join(" ")}</${tag}>`;
+            !!child 
+                ? renderInNode(child) 
+                : ""
+            ).join(" ")}</${tag}>`;
     }
 }

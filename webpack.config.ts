@@ -1,13 +1,14 @@
-const path = require('path')
-const webpack = require("webpack");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+import webpack, { Configuration } from "webpack";
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import merge from "webpack-merge";
 const nodeExternals = require("webpack-node-externals");
-const merge = require("webpack-merge");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+import path from 'path';
 
-const common = (entry) => ({
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+const common: (entry: string) => Configuration = (entry) => ({
     entry : {
         main: entry, 
     },
@@ -18,7 +19,7 @@ const common = (entry) => ({
         publicPath: "/",
     },
     plugins: [
-        new CopyWebpackPlugin([
+        new CopyWebpackPlugin({ patterns: [
             { from: './assets/resume.png' },
             { from: './assets/resume-256.png' },
             { from: './assets/resume-512.png' },
@@ -27,7 +28,7 @@ const common = (entry) => ({
             { from: './site-meta/robots.txt' },
             { from: './site-meta/sitemap.txt' },
             { from: './site-meta/README.md' }
-        ]),
+        ] }),
         new webpack.EnvironmentPlugin({"CONFIDENTIAL_MODE": false})
     ],
     module: {
@@ -65,7 +66,7 @@ const commonWeb = merge(common("./src/index.tsx"), {
         new HtmlWebpackPlugin({
             template: "./dist/index-ssr.html",
             hash: true
-        })
+        }) as any // This lib pulls in the wrong version of webpack types for now
     ]
 })
 
@@ -98,7 +99,7 @@ module.exports = [
         target: 'node',
         externals: [nodeExternals()],
         plugins: [
-            new CleanWebpackPlugin('./dist')
+            new CleanWebpackPlugin()
         ],
         module: {
             rules: [
