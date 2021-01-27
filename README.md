@@ -4,7 +4,7 @@ This is a simple templated builder for my resume.
 It is data-driven and renderable in node to a single static HTML page. 
 It does not use any frameworks or ui libraries but it does use a whole lot of webpack plugins.
 
-See my resume at [ryankadri.github.io](https://ryankadri.github.io)
+See my resume at <https://resume.rk0.xyz>
 
 ## Goals
 
